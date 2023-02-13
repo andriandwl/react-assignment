@@ -57,20 +57,30 @@ export default function LoginInput() {
   return (
     <div>
       <form className="container d-flex">
-        <input
-          type="email"
-          value={email}
-          placeholder="email"
-          onChange={(e) => emailValidator(e)}
-        />
-        <span>{emailError}</span>
-        <input
-          placeholder="password"
-          type="password"
-          value={password}
-          onChange={(e) => passwordValidator(e)}
-        />
-        <span>{passwordError}</span>
+        <div className="form-floating mb-3">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => emailValidator(e)}
+            className="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label htmlFor="floatingInput">Email address</label>
+          <span>{emailError}</span>
+        </div>
+        <div className="form-floating mb-3">
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => passwordValidator(e)}
+            className="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label htmlFor="floatingPassword">Password</label>
+          <span>{passwordError}</span>
+        </div>
         <button type="button" onClick={handleClick}>
           Login
         </button>
